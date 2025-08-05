@@ -5,7 +5,14 @@ export const ACTIONS = {
 };
 
 const newTodo = (task) => {
-	return { id: Date.now(), task: task, complete: false };
+	const entry = {
+		id: crypto.randomUUID(),
+		task: task,
+		completed: false,
+		timestamp: new Date().toISOString()
+	};
+
+	return entry;
 };
 
 const reducer = (todos, action) => {
@@ -15,8 +22,9 @@ const reducer = (todos, action) => {
 		case ACTIONS.UPDATE_TODO:
 			return todos.map((todo) => {
 				if (todo.id === action.payload.id) {
-					return { ...todo, complete: !todo.complete };
+					return { ...todo, completed: !todo.completed };
 				}
+				return todo;
 			});
 		case ACTIONS.DELETE_TODO:
 			return todos.filter((todo) => todo.id !== action.payload.id);
