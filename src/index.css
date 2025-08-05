@@ -5,5 +5,5 @@
 }
 
 @utility input {
-	@apply w-full px-4 py-2.5 rounded-full border border-purple-500 focus:outline-purple-700 font-normal text-base text-neutral-800 placeholder:text-neutral-400;
+	@apply w-full px-6 py-3 rounded-full border border-pink-500 outline-none focus:border-2 focus:border-pink-700 font-normal text-base text-neutral-800 placeholder:text-neutral-400 box-border;
 }
