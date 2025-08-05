@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { ACTIONS } from '../lib/utils/reducer';
+import { useTodo } from '../context/TodoContext';
 
-const NewTodo = ({ dispatch }) => {
+const NewTodo = () => {
+	const { dispatch } = useTodo();
+
 	const [showInput, setShowInput] = useState(false);
-
 	const [task, setTask] = useState('');
 
 	const handleSubmit = (e) => {
@@ -29,25 +31,27 @@ const NewTodo = ({ dispatch }) => {
 								setTask(e.target.value);
 							}}
 							autoComplete='off'
+							autoFocus
+							maxLength={160}
 						/>
-						<div className='flex items-center justify-end gap-2 mt-2'>
+						<div className='flex items-center justify-end gap-2 mt-4'>
 							<button
 								type='button'
 								onClick={() => setShowInput(false)}
 								className='button bg-red-700 hover:bg-red-900'>
-								Cancel
+								X Cancel
 							</button>
 							<button
 								type='submit'
-								className='button bg-purple-700 hover:bg-purple-900'>
-								Create Note
+								className='button bg-pink-700 hover:bg-pink-900'>
+								+ Create Note
 							</button>
 						</div>
 					</div>
 				) : (
 					<button
 						onClick={() => setShowInput(true)}
-						className='w-14 h-14 text-2xl font-black rounded-full bg-purple-700 hover:bg-purple-900 text-white absolute bottom-12 right-4 sm:right-6 flex justify-center items-center cursor-pointer'>
+						className='w-14 h-14 text-2xl font-black rounded-full bg-pink-700 hover:bg-pink-900 text-white absolute bottom-12 right-4 sm:right-6 flex justify-center items-center cursor-pointer'>
 						+
 					</button>
 				)}
