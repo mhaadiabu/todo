@@ -1,6 +1,9 @@
+import { useTodo } from '../context/TodoContext';
 import { ACTIONS } from '../lib/utils/reducer';
 
-const Todo = ({ dispatch, todo }) => {
+const Todo = ({ todo }) => {
+	const { dispatch } = useTodo();
+
 	const toggleTodo = () => {
 		dispatch({
 			type: ACTIONS.UPDATE_TODO,
@@ -9,18 +12,23 @@ const Todo = ({ dispatch, todo }) => {
 	};
 
 	return (
-		<div className='mt-4 w-full max-w-3xl mx-auto border-b border-b-purple-500 px-2.5 py-2.5 flex items-center justify-between'>
+		<div className='mt-4 w-full max-w-4xl mx-auto border-b last:border-0 border-b-pink-500 px-2.5 py-2.5 flex items-center justify-between text-wrap'>
 			<div className='flex items-center gap-2'>
-				<form className='flex justify-center items-center'>
+				<form className='flex justify-center items-center max-w-3xl'>
 					<input
 						name='checkbox'
 						type='checkbox'
-						className='bg-purple-700 text-white w-5 h-5 rounded-sm p-1'
+						className='accent-pink-700 text-white w-4 h-4 cursor-pointer'
 						defaultChecked={todo.completed}
 						onChange={toggleTodo}
 					/>
 				</form>
-				<p>{todo.task}</p>
+				<p
+					className={
+						todo.completed ? 'line-through text-neutral-400' : 'no-underline'
+					}>
+					{todo.task}
+				</p>
 			</div>
 
 			<button
