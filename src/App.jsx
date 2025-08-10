@@ -16,8 +16,6 @@ const App = () => {
 		});
 	}, [todos, search]);
 
-	console.log(filteredTodos);
-
 	return (
 		<main className='w-full min-h-screen flex flex-col justify-center items-center bg-neutral-50 px-4 sm:px-6'>
 			<div className='max-w-4xl w-full flex flex-1 flex-col justify-start mx-auto'>
