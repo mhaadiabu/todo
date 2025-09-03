@@ -7,7 +7,7 @@ const Todo = ({ todo }) => {
 	const toggleTodo = () => {
 		dispatch({
 			type: ACTIONS.UPDATE_TODO,
-			payload: { id: todo.id, task: todo.task, completed: todo.completed }
+			payload: { id: todo.id, task: todo.task, status: todo.status }
 		});
 	};
 
@@ -19,13 +19,15 @@ const Todo = ({ todo }) => {
 						name='checkbox'
 						type='checkbox'
 						className='accent-pink-700 text-white w-4 h-4 cursor-pointer'
-						defaultChecked={todo.completed}
+						checked={todo.status === 'completed' ? true : false}
 						onChange={toggleTodo}
 					/>
 				</form>
 				<p
 					className={
-						todo.completed ? 'line-through text-neutral-400' : 'no-underline'
+						todo.status === 'completed'
+							? 'line-through text-neutral-400'
+							: 'no-underline'
 					}>
 					{todo.task}
 				</p>

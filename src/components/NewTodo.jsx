@@ -7,9 +7,12 @@ const NewTodo = () => {
 
 	const [showInput, setShowInput] = useState(false);
 	const [task, setTask] = useState('');
+	const [error, setError] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		if (task.length < 1) return setError('Cannot create empty task.');
 
 		dispatch({ type: ACTIONS.CREATE_TODO, payload: { task: task } });
 
@@ -34,10 +37,17 @@ const NewTodo = () => {
 							autoFocus
 							maxLength={160}
 						/>
+						<p className='text-base font-semibold text-red-700 mt-2 ml-4'>
+							{error}
+						</p>
 						<div className='flex items-center justify-end gap-2 mt-4'>
 							<button
 								type='button'
-								onClick={() => setShowInput(false)}
+								onClick={() => {
+									setShowInput(false);
+									setError('');
+									setTask('');
+								}}
 								className='button bg-red-700 hover:bg-red-900'>
 								X Cancel
 							</button>
