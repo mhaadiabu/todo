@@ -18,6 +18,7 @@ const NewTodo = () => {
 		dispatch({ type: ACTIONS.CREATE_TODO, payload: { task: task } });
 
 		setTask('');
+		setError('');
 		setShowInput(false);
 	};
 
