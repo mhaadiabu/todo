@@ -54,8 +54,8 @@ const NewTodo = () => {
 							</button>
 							<button
 								type='submit'
-								className='button bg-pink-700 hover:bg-pink-900 flex gap-2 items-center'>
-								<PlusIcon className='w-6 h-6 text-white' /> Create Note
+								className='button bg-pink-700 hover:bg-pink-900 flex gap-2 items-center text-white stroke-white border-white'>
+								<PlusIcon className='w-6 h-6' /> Create Note
 							</button>
 						</div>
 					</div>

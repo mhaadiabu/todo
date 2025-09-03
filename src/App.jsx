@@ -26,12 +26,12 @@ const App = () => {
 					ToDo List
 				</h1>
 				<div className='input flex items-center mx-0'>
-					<SearchIcon className='w-6 h-6 mr-2' />
+					<SearchIcon className='w-6 h-6' />
 					<input
 						name='search-input'
 						type='text'
 						placeholder='Search note...'
-						className='h-full w-full outline-none border-none focus:border-2'
+						className='h-full w-full outline-none border-none focus:border-2 ml-4'
 						autoComplete='off'
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}

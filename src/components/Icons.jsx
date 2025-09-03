@@ -81,7 +81,7 @@ export const CancelIcon = () => (
 		viewBox='0 0 24 24'
 		width={24}
 		height={24}
-		color={'#000000'}
+		color={'currentColor'}
 		fill={'none'}>
 		<path
 			d='M18 6L6.00081 17.9992M17.9992 18L6 6.00085'
