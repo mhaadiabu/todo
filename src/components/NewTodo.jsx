@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ACTIONS } from '../lib/utils/reducer';
 import { useTodo } from '../context/TodoContext';
+import { CancelIcon, PlusIcon } from './Icons';
 
 const NewTodo = () => {
 	const { dispatch } = useTodo();
@@ -48,21 +49,21 @@ const NewTodo = () => {
 									setError('');
 									setTask('');
 								}}
-								className='button bg-red-700 hover:bg-red-900'>
-								X Cancel
+								className='button bg-red-700 hover:bg-red-900 flex gap-2 items-center'>
+								<CancelIcon className='w-6 h-6' /> Cancel
 							</button>
 							<button
 								type='submit'
-								className='button bg-pink-700 hover:bg-pink-900'>
-								+ Create Note
+								className='button bg-pink-700 hover:bg-pink-900 flex gap-2 items-center'>
+								<PlusIcon className='w-6 h-6' /> Create Note
 							</button>
 						</div>
 					</div>
 				) : (
 					<button
 						onClick={() => setShowInput(true)}
-						className='w-14 h-14 text-2xl font-black rounded-full bg-pink-700 hover:bg-pink-900 text-white absolute bottom-12 right-4 sm:right-6 flex justify-center items-center cursor-pointer'>
-						+
+						className='p-4 text-2xl font-black rounded-full bg-pink-700 hover:bg-pink-900 text-white absolute bottom-12 right-4 sm:right-6 flex justify-center items-center cursor-pointer'>
+						<PlusIcon className='w-7 h-7' />
 					</button>
 				)}
 			</form>

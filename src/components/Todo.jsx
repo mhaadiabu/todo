@@ -1,5 +1,6 @@
 import { useTodo } from '../context/TodoContext';
 import { ACTIONS } from '../lib/utils/reducer';
+import { DeleteIcon } from './Icons';
 
 const Todo = ({ todo }) => {
 	const { dispatch } = useTodo();
@@ -41,7 +42,7 @@ const Todo = ({ todo }) => {
 					})
 				}
 				className='text-lg font-bold text-red-700 cursor-pointer hover:text-red-900'>
-				X
+				<DeleteIcon className='w-6 h-6' />
 			</button>
 		</div>
 	);

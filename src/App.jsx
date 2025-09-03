@@ -4,6 +4,7 @@ import Todo from './components/Todo';
 import NewTodo from './components/NewTodo';
 
 import { useTodo } from './context/TodoContext';
+import { CancelIcon, SearchIcon } from './components/Icons';
 
 const App = () => {
 	const [search, setSearch] = useState('');
@@ -25,6 +26,7 @@ const App = () => {
 					ToDo List
 				</h1>
 				<div className='input flex mx-0'>
+					<SearchIcon className='w-6 h-6' />
 					<input
 						name='search-input'
 						type='text'
@@ -36,10 +38,10 @@ const App = () => {
 					/>
 					<button
 						onClick={() => setSearch('')}
-						className={`justify-end items-center w-6 h-6 ${
+						className={`justify-end items-center ${
 							search.length > 0 ? 'flex' : 'hidden'
 						}`}>
-						X
+						<CancelIcon className='w-6 h-6' />
 					</button>
 				</div>
 				{filteredTodos.map((todo) => (
