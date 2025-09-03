@@ -7,8 +7,13 @@ const TodoContext = createContext([]);
 const TodoProvider = ({ children }) => {
 	const [todos, dispatch] = useReducer(reducer, [], () => {
 		const savedTodos = localStorage.getItem('todos');
-		if (!savedTodos) return;
-		return JSON.parse(savedTodos);
+		if (!savedTodos) return [];
+		try {
+			const parsed = JSON.parse(savedTodos);
+			return Array.isArray(parsed) ? parsed : [];
+		} catch {
+			return [];
+		}
 	});
 
 	useEffect(() => {
