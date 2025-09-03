@@ -25,8 +25,8 @@ const App = () => {
 				<h1 className='text-3xl font-bold text-center my-6 capitalize'>
 					ToDo List
 				</h1>
-				<div className='input flex mx-0'>
-					<SearchIcon className='w-6 h-6' />
+				<div className='input flex items-center mx-0'>
+					<SearchIcon className='w-6 h-6 mr-2' />
 					<input
 						name='search-input'
 						type='text'
@@ -38,7 +38,7 @@ const App = () => {
 					/>
 					<button
 						onClick={() => setSearch('')}
-						className={`justify-end items-center ${
+						className={`justify-end items-center cursor-pointer ${
 							search.length > 0 ? 'flex' : 'hidden'
 						}`}>
 						<CancelIcon className='w-6 h-6' />
