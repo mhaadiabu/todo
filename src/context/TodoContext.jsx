@@ -2,7 +2,7 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
 import { reducer } from '../lib/utils';
 
-const TodoContext = createContext(null);
+const TodoContext = createContext([]);
 
 const TodoProvider = ({ children }) => {
 	const [todos, dispatch] = useReducer(reducer, [], () => {
