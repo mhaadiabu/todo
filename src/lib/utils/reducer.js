@@ -8,8 +8,9 @@ const newTodo = (task) => {
 	const entry = {
 		id: crypto.randomUUID(),
 		task: task,
-		completed: false,
-		timestamp: new Date().toISOString()
+		status: 'not-completed',
+		created: new Date().toISOString(),
+		last_updated: new Date().toISOString()
 	};
 
 	return entry;
@@ -22,7 +23,12 @@ const reducer = (todos, action) => {
 		case ACTIONS.UPDATE_TODO:
 			return todos.map((todo) => {
 				if (todo.id === action.payload.id) {
-					return { ...todo, completed: !todo.completed };
+					return {
+						...todo,
+						status:
+							todo.status === 'not-completed' ? 'completed' : 'not-completed',
+						last_updated: new Date().toISOString()
+					};
 				}
 				return todo;
 			});
