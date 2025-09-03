@@ -7,7 +7,7 @@ const Todo = ({ todo }) => {
 	const toggleTodo = () => {
 		dispatch({
 			type: ACTIONS.UPDATE_TODO,
-			payload: { id: todo.id, task: todo.task, status: todo.status }
+			payload: { id: todo.id, status: todo.status }
 		});
 	};
 
@@ -37,7 +37,7 @@ const Todo = ({ todo }) => {
 				onClick={() =>
 					dispatch({
 						type: ACTIONS.DELETE_TODO,
-						payload: { id: todo.id, task: todo.task, completed: todo.completed }
+						payload: { id: todo.id }
 					})
 				}
 				className='text-lg font-bold text-red-700 cursor-pointer hover:text-red-900'>
