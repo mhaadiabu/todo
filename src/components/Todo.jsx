@@ -24,14 +24,16 @@ const Todo = ({ todo }) => {
 						onChange={toggleTodo}
 					/>
 				</form>
-				<p
-					className={
-						todo.status === 'completed'
-							? 'line-through text-neutral-400'
-							: 'no-underline'
-					}>
-					{todo.task}
-				</p>
+				<button onClick={toggleTodo}>
+					<p
+						className={
+							todo.status === 'completed'
+								? 'line-through text-neutral-400'
+								: 'no-underline'
+						}>
+						{todo.task}
+					</p>
+				</button>
 			</div>
 
 			<button
