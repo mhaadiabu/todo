@@ -11,6 +11,8 @@ const App = () => {
 	const { todos } = useTodo();
 
 	const filteredTodos = useMemo(() => {
+		if (!Array.isArray(todos)) return 'Loading...';
+
 		return todos.filter((todo) => {
 			return todo.task.toLowerCase().includes(search.toLowerCase());
 		});
