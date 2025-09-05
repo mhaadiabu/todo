@@ -20,18 +20,15 @@ const App = () => {
 	}, [todos, search]);
 
 	return (
-		<main className='w-full min-h-screen flex flex-col justify-center items-center bg-neutral-50 px-4 sm:px-6'>
-			<div className='max-w-4xl w-full flex flex-1 flex-col justify-start mx-auto'>
-				<h1 className='text-3xl font-bold text-center my-6 capitalize'>
-					ToDo List
-				</h1>
+		<main className='w-full min-h-screen flex flex-col justify-center items-center bg-pink-50 text-pink-950 px-4 sm:px-6'>
+			<div className='max-w-4xl w-full flex flex-1 flex-col justify-start mx-auto mt-10'>
 				<div className='input flex items-center mx-0'>
-					<SearchIcon className='w-6 h-6' />
+					<SearchIcon className='text-pink-950/65' />
 					<input
 						name='search-input'
 						type='text'
 						placeholder='Search note...'
-						className='h-full w-full outline-none border-none focus:border-2 ml-4'
+						className='h-full w-full outline-none border-none ml-4'
 						autoComplete='off'
 						value={search}
 						onChange={(e) => setSearch(e.target.value)}
@@ -41,13 +38,14 @@ const App = () => {
 						className={`justify-end items-center cursor-pointer ${
 							search.length > 0 ? 'flex' : 'hidden'
 						}`}>
-						<CancelIcon className='w-6 h-6' />
+						<CancelIcon className='text-pink-50/65' />
 					</button>
 				</div>
 				{filteredTodos.map((todo) => (
 					<Todo
 						key={todo.id}
 						todo={todo}
+						className='not-last:border-b not-last:border-b-pink-600'
 					/>
 				))}
 				<NewTodo />

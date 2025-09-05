@@ -39,7 +39,7 @@ const NewTodo = () => {
 							autoFocus
 							maxLength={160}
 						/>
-						<p className='text-base font-semibold text-red-700 mt-2 ml-4'>
+						<p className='text-sm font-semibold text-pink-800 mt-2 ml-4'>
 							{error}
 						</p>
 						<div className='flex items-center justify-end gap-2 mt-4'>
@@ -50,12 +50,12 @@ const NewTodo = () => {
 									setError('');
 									setTask('');
 								}}
-								className='button bg-red-700 hover:bg-red-900 flex gap-2 items-center'>
+								className='button bg-red-800 hover:bg-red-900 flex gap-1 items-center transition'>
 								<CancelIcon className='w-6 h-6' /> Cancel
 							</button>
 							<button
 								type='submit'
-								className='button bg-pink-700 hover:bg-pink-900 flex gap-2 items-center text-white stroke-white border-white'>
+								className='button bg-pink-900 hover:bg-pink-900/45 flex gap-1 items-center text-white transition'>
 								<PlusIcon className='w-6 h-6' /> Create Note
 							</button>
 						</div>
@@ -63,7 +63,7 @@ const NewTodo = () => {
 				) : (
 					<button
 						onClick={() => setShowInput(true)}
-						className='p-4 text-2xl font-black rounded-full bg-pink-700 hover:bg-pink-900 text-white absolute bottom-12 right-4 sm:right-6 flex justify-center items-center cursor-pointer'>
+						className='p-4 text-2xl font-black rounded-xl bg-pink-900/85 backdrop-blur-lg shadow-lg hover:bg-pink-900/65 text-white fixed bottom-12 right-4 sm:right-6 flex justify-center items-center cursor-pointer transition'>
 						<PlusIcon className='w-7 h-7' />
 					</button>
 				)}

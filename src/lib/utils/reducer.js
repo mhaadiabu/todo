@@ -32,6 +32,17 @@ const reducer = (todos, action) => {
 				}
 				return todo;
 			});
+		case ACTIONS.EDIT_TODO:
+			return todos.map((todo) => {
+				if (todo.id === action.payload.id) {
+					return {
+						...todo,
+						todo: action.payload.todo,
+						last_updated: new Date().toISOString()
+					};
+				}
+				return todo;
+			});
 		case ACTIONS.DELETE_TODO:
 			return todos.filter((todo) => todo.id !== action.payload.id);
 		default:

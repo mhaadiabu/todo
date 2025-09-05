@@ -2,8 +2,8 @@ export const PlusIcon = () => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
 		viewBox='0 0 24 24'
-		width={24}
-		height={24}
+		width={20}
+		height={20}
 		color={'#ffffff'}
 		fill={'none'}>
 		<path
@@ -58,7 +58,7 @@ export const SearchIcon = () => (
 		viewBox='0 0 24 24'
 		width={24}
 		height={24}
-		color={'#000000'}
+		color={'currentColor'}
 		fill={'none'}>
 		<path
 			d='M17 17L21 21'
@@ -79,8 +79,8 @@ export const CancelIcon = () => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
 		viewBox='0 0 24 24'
-		width={24}
-		height={24}
+		width={20}
+		height={20}
 		color={'currentColor'}
 		fill={'none'}>
 		<path
