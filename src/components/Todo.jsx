@@ -59,7 +59,7 @@ const Todo = ({ todo, className }) => {
 						</form>
 						<button onClick={toggleTodo}>
 							<p
-								className={`w-full text-wrap ${
+								className={`w-full text-wrap text-left ${
 									todo.status === 'completed'
 										? 'line-through text-neutral-400'
 										: 'no-underline'
